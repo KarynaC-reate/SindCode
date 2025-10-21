@@ -5,5 +5,6 @@ from noticias.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('noticias.urls')),
+    path('',include('associados.urls')),
 ]
 
