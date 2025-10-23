@@ -1,0 +1,33 @@
+/*
+    estilizar uma tag
+    estilizar uma classe
+    estilizar um identifixador
+*/
+
+body{
+    background-color: #000000;
+}
+ .para_azul{
+}
+#topo{
+    background-color: green;
+    width: 1852px;
+    height: 160px;
+    border:2px solid red;
+}
+#media_busca{
+    background-color: grey;
+    width: 100%;
+    height: 52px;
+}
+#logo_menu{
+    background-color: #FFFFFF;
+    width:1350%;
+    height:108px;
+}
+main{
+    width: 100%;
+    height: 1200px;
+    border: 2px solid yellow;
+}
+
