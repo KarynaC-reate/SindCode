@@ -53,3 +53,25 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - Entre no Github e crie um novo repositório: https://github.com/KarynaC-reate/SindCode
 - Usar commit especificando a tarefa do SCRUM git commit -m "<<codigo-task>> <<mensagem>> <<#status>>"
 
+#### **Aula 4: DRY (Don´t Repeat Yourself)**
+
+- index - noticias (principal)
+- index - associados
+- extends
+- include
+- partials
+
+#### **Aula 5: Conclusão**
+
+- Um projeto Django é formado por um ou vários aplicativos
+- O Django nasceu para gerenciar conteúdo (indicado para portais e notícias) 
+- O Django é usado por grandes empresas (Netflix, Spotify, Instagram)
+- O Django é seguro, usa python, simples, prático
+- O Django é integrado (Admin, Segurança, Templates)
+- O Django é dividido em camadas
+  - MTV (Model, View, Template) 
+- Model é o modelo da aplicação
+- View é o controlador (requisições [request-response (HTTP)])
+- Template é a parte visual do sistema (HTML, CSS, ASSETS, STYLES, JS, BOOTSTRAP)
+- https://tailwindcss.com/ pode ser utilizado em uma camada junto com DTL
+- DTM (Django Template Language) - {%    %}

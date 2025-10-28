@@ -1,24 +1,7 @@
-<!DOCTYPE>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sindcode 0.2</title>
-    <!---Introdução ao DTL (Django Template Language)--->
-    <link rel="stylesheet" href="{% static '/styles/style.css'%}">
-</head>
-<body>
-
+{% extends 'noticias/base.html'%} <!-- DTL - Django Template Language -->
+{% load static %} <!-- DTL - Django Template Language -->
+{% block content %}
     <div id="site">
-        <header id="topo">
-                <div id="media_busca">
-                  aqui são as mídias e a busca
-            </div>
-                    <div id="logo_menu">
-                aqui é a logo do menu
-            </div>
-        </header>
 
         <main id="area">
             <div id="slideshow">
@@ -41,11 +24,7 @@
             </div>
         </main>
 
-        <footer id="rodape">
-            aqui é o rodapé
-        </footer>
-
     </div>
 
-</body>
-</html>
+{% endblock %}
+
