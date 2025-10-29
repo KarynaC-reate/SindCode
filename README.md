@@ -74,4 +74,56 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - View é o controlador (requisições [request-response (HTTP)])
 - Template é a parte visual do sistema (HTML, CSS, ASSETS, STYLES, JS, BOOTSTRAP)
 - https://tailwindcss.com/ pode ser utilizado em uma camada junto com DTL
-- DTM (Django Template Language) - {%    %}
+- DTL (Django Template Language) - {%    %}
+- Aprendemos a configurar URLs e executar aplicação com servidor local
+- Aprendemos sobre HTML e suas principais TAGS
+- Aprendemos um pouco sobre cores e psicologia das cores e identidade visual
+- Aprendemos sobre div e sobre o uso de HTML header, main e footer
+- Aprendemos um pouco sobre fórmularios HTML
+- Aprendemos a gerar um layout com Gemini Canvas
+- Referência Layout: https://gemini.google.com/share/907d04b81dd0
+
+#### **Módulo 2- Django e ADMIN"**
+
+- Aprsentação
+- Preparar o ambiente
+- Nomes dinâmicos
+- Banco de dados
+- ORM no Django
+- Criar dados
+- Models no Django
+
+#### **Admin**
+
+- Acessar o banco
+- Passar referência
+- CRUD no Admin
+- Incluir Categoria na Notícia (1:N)
+- Makemigrations e migrate
+
+#### **Admin Avançado**
+
+- Personalizar Admin
+- Funcionalidade de publicação
+- Incrementar o index (deixar o site bonito)
+
+#### **Imagens e Filtros**
+
+- Caminho para fotos (Galeria de Fotos)
+- Imagem "not found"
+- Alterar a imagem no template
+
+#### **Mecanismo de Busca**
+
+- Funcionalidade de buscar
+- View de buscar
+- Autenticação e autorização (Django Admin)
+
+#### **Conclusão**
+
+- Concluir
+- Tirando dúvidas
+- Provinha prática teórica de POO
+- GitHub
+- Linkedin
+- Vercel e Django
