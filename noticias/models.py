@@ -13,7 +13,7 @@ class Categoria(models.Model):
     # null: nenhuma informação
     # blank: string vazia " "
     def __str__(self):
-        return "Categoria [nome={self.nome}]"
+        return f"Categoria [nome={self.nome}]"
 
 # Django ORM
 
