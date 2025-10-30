@@ -127,3 +127,14 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - GitHub
 - Linkedin
 - Vercel e Django
+
+#### **MVT (Model View Template):**
+
+#### Moldel:
+
+- Classe: É um modelo para a criação de um objeto e define um conjunto de atributos e métodos;
+- Atributo: Váriável de uma classe;
+- Método: Representa uma funcionalidade do objeto;
+- Objeto: É uma instância de uma classe, um elemento que define o objeto na memória. Ou seja, a instância é o objeto;
+- Construtor: É um recurso especial da linguagem que serve para construir um objeto na memória e/ou inicializar-lo com valores;
+- Herança: É uma classe que herda outra classe e a usa, mas também pode ter seus próprios atributos e métodos.
