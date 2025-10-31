@@ -77,15 +77,15 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - DTL (Django Template Language) - {%    %}
 - Aprendemos a configurar URLs e executar aplicação com servidor local
 - Aprendemos sobre HTML e suas principais TAGS
-- Aprendemos um pouco sobre cores e psicologia das cores e identidade visual
+- Aprendemos um pouco sobre cores, psicologia das cores e identidade visual
 - Aprendemos sobre div e sobre o uso de HTML header, main e footer
 - Aprendemos um pouco sobre fórmularios HTML
 - Aprendemos a gerar um layout com Gemini Canvas
 - Referência Layout: https://gemini.google.com/share/907d04b81dd0
 
-#### **Módulo 2- Django e ADMIN"**
+#### **Módulo 2- Django e ADMIN**
 
-- Aprsentação
+- Apresentação
 - Preparar o ambiente
 - Nomes dinâmicos
 - Banco de dados
