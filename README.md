@@ -83,6 +83,16 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - Aprendemos a gerar um layout com Gemini Canvas
 - Referência Layout: https://gemini.google.com/share/907d04b81dd0
 
+    <style>
+            /* 1. Definição das Cores Customizadas Bootstrap (Azul Escuro e Ciano) */
+            :root {
+               --bs-primary: #004080; /* Azul Escuro (Principal) */
+               --bs-info: #00bcd4;    /* Azul Ciano/Teal (Destaque) */
+               --bs-body-bg: #f8f9fa; /* Fundo Levemente Acinzentado */
+               --bs-font-sans-serif: 'Inter', sans-serif;
+            }
+        </style>
+
 #### **Módulo 2- Django e ADMIN**
 
 - Apresentação
