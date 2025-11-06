@@ -1,5 +1,4 @@
 from django.db import models
-
 # Estudar o que é ORM (Object Relation Mapper)
 # A classe é um conjunto de objetos
 # Herança: Uma classse herda outra e implementa suas próprias características
@@ -14,6 +13,19 @@ class Categoria(models.Model):
     # blank: string vazia " "
     def __str__(self):
         return f"Categoria [nome={self.nome}]"
+
+class Autor(models.Model):
+    # O campo 'id' com chave primária (Primary Key) é criado
+    # automaticamente pelo Django, a menos que você defina um.
+    # Se quiser ser explícito e refletir INT(11), pode fazer:
+    # id = models.AutoField(primary_key=True)
+    # Mas é mais comum e recomendado deixar o padrão.
+    nome = models.CharField(max_length=80, null=False, blank=False)
+
+    perfil = models.TextField(max_length=200, null=False, blank=False)
+
+    def __str__(self):
+        return self.nome + self.perfil
 
 # Django ORM
 
