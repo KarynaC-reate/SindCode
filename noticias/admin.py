@@ -1,7 +1,6 @@
 from django.contrib import admin
+from noticias.models import Categoria, Autor, Noticia
 
-import noticias.models as nt
-
-
-admin.site.register(nt.Categoria)
-admin.site.register(nt.Autor)
+admin.site.register(Categoria)
+admin.site.register(Autor)
+admin.site.register(Noticia)
