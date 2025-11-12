@@ -32,10 +32,9 @@ class Noticia(models.Model):
         ('4','4'),
         ('5','5') # <--- MUST BE ADDED TO CHOICES
     ],default='5') # <--- DEFAULT VALUE SET HERE
-    foto = models.CharField(max_length=60, null=False, blank=False)
-    #Relacionamento N-1(Muitas Noticias para um Autor)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d", null=False, blank=False)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='noticias_autor', null=False)  # nome do relacionamento reverso (autor.noticias.all())
-
+    #Relacionamento N-1(Muitas Noticias para um Autor)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='noticias_categoria', null=False)
     def __str__(self):
         return self.titulo
