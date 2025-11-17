@@ -38,5 +38,20 @@ body{
      display: block;
      color: rgba(173, 216, 230, 0.9);
 }
-
+.busca{
+    margin-right: 45px;
+    float: right;
+    /* distância
+       direita = right
+       esquerda = left
+       topo = top
+       embaixo = bottom
+       margin - distância externa
+       padding - distância interna
+    */
+     padding-right: 15px;
+}
+.busca_icone{
+    margin-right: 10px;
+}
 
