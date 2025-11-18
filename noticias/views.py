@@ -7,12 +7,8 @@ from noticias.models import Categoria, Autor, Noticia
 # Se def fora classe = função
 
 def categorias(request):
-
-
     categorias = Categoria.objects.all()
-    return render(request,
-                  'noticias/index.html',
-                  {'cards':categorias})
+    return render(request,'noticias/index.html',{'cards':categorias})
 
 def autores(request):
     autores = Autor.objects.all()
@@ -23,10 +19,16 @@ def index(request):
     return render(request,'noticias/index.html',{'noticias':noticias})
 
 def buscar(request):
-    noticias = Noticia.objects.order_by('data_publicacao').filter("destaque" == 5)
-    # terminar amanhã
-    return render(request,'noticias/buscar.html')
+    noticias = noticias = Noticia.objects.all()
+    if "buscar" in request.GET:
+        nome_buscar = request.GET['buscar']
+        if  nome_buscar:
+            noticias = noticias.filter(conteudo__icontains=nome_buscar)
+    return render(request,'noticias/buscar.html',{'noticias':noticias})
 
+def retornar(request):
+    noticias = noticias = Noticia.objects.all()
+    return render(request,'noticias/index.html',{'noticias':noticias})
 
 # return HttpResponse("<h1>Alô Django🚀</h1>")
     # Definindo um mock com dictionary
