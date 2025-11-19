@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.template.defaultfilters import length
+
 from noticias.models import Categoria, Autor, Noticia
 
 # Função
@@ -29,6 +31,17 @@ def buscar(request):
 def retornar(request):
     noticias = noticias = Noticia.objects.all()
     return render(request,'noticias/index.html',{'noticias':noticias})
+
+def detalhe_noticia(request, noticia_id):
+    # Busca a notícia pelo ID ou retorna um erro 404 se não encontrar
+    noticia = get_object_or_404(Noticia, pk=noticia_id)
+    return render(request, 'noticias/detalhe_noticia.html', {'noticia': noticia})
+
+def noticia_destaque(request):
+
+
+
+
 
 # return HttpResponse("<h1>Alô Django🚀</h1>")
     # Definindo um mock com dictionary

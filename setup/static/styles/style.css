@@ -39,7 +39,7 @@ body{
      color: rgba(173, 216, 230, 0.9);
 }
 .busca{
-    margin-right: 45px;
+    margin-right: 20px;
     float: right;
     /* distância
        direita = right
@@ -49,9 +49,10 @@ body{
        margin - distância externa
        padding - distância interna
     */
-     padding-right: 15px;
+     padding-right: 10px;
 }
 .busca_icone{
     margin-right: 10px;
+    margin-left: 10px;
 }
 

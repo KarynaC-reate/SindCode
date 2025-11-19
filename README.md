@@ -148,3 +148,11 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - Objeto: É uma instância de uma classe, um elemento que define o objeto na memória. Ou seja, a instância é o objeto;
 - Construtor: É um recurso especial da linguagem que serve para construir um objeto na memória e/ou inicializar-lo com valores;
 - Herança: É uma classe que herda outra classe e a usa, mas também pode ter seus próprios atributos e métodos.
+
+/*
+    git add e git commit na branch que está sendo trabalhada
+    git checkout main (mudar para main)
+    git merge (nome-da-branch)
+    depois pode dar git push -u origin main
+    depois pode apagar a branch (git branch -d (nome-da-branch))
+*/
