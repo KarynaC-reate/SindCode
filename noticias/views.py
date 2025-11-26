@@ -45,7 +45,7 @@ def detalhe_noticia(request, noticia_id):
 
 
 def todas_noticias(request):
-    todas_noticias = Noticia.objects.all()
+    todas_noticias = Noticia.objects.all().order_by('-data_publicacao')
 
     context = {
         'todas_noticias': todas_noticias,
