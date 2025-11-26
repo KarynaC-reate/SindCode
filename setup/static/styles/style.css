@@ -38,18 +38,7 @@ body{
      display: block;
      color: rgba(173, 216, 230, 0.9);
 }
-.busca{
-    /* distãncia
-        direita = right
-        esquerda = left
-        topo = top
-        embaixo = bottom
 
-        margin - distância externa
-        padding - distãncia interna
-    */
-    margin-left:50px;
-    float:
 /* CONTAINER PRINCIPAL: Organiza a label e o campo de busca */
 .busca-container {
     /* Mantém o espaçamento externo (ajuste este valor se precisar) */
@@ -145,5 +134,5 @@ body{
 }
 
 .buscar_icone{
-
+    margin-right:10px
 }

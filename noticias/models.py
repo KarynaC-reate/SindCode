@@ -29,7 +29,6 @@ class Noticia(models.Model):
     conteudo = models.TextField(null=False, blank=False)
     data_atual = datetime.datetime.now()
     data_publicacao = data_atual.strftime("%d/%m/%Y %H:%M:%S")
-    # data_publicacao = models.DateTimeField(auto_now=True, null=False, blank=False)
     destaque = models.CharField(max_length=5 , choices=[
         ('0','0'),
         ('1','1'),
