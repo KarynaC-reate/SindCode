@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template.defaultfilters import length
-
 from noticias.models import Categoria, Autor, Noticia
+from django.db.models import Q
 
 
 # Função
@@ -25,13 +25,24 @@ def index(request):
 
 
 def buscar(request):
-    noticias = noticias = Noticia.objects.all()
-    if "buscar" in request.GET:
-        nome_buscar = request.GET['buscar']
-        if nome_buscar:
-            noticias = noticias.filter(conteudo__icontains=nome_buscar)
-    return render(request, 'noticias/buscar.html', {'noticias': noticias})
+    noticias = Noticia.objects.all()
 
+    if 'buscar' in request.GET:
+
+        nome_buscar = request.GET["buscar"]
+
+        if nome_buscar:
+            condicao_titulo = Q(titulo__icontains=nome_buscar)
+            condicao_conteudo = Q(conteudo__icontains=nome_buscar)
+
+            filtro_ou = condicao_titulo | condicao_conteudo
+
+            noticias = Noticia.objects.filter(filtro_ou)
+
+        else:
+            noticias = Noticia.objects.all()
+
+    return render(request, 'noticias/buscar.html', {'noticias': noticias})
 
 def retornar(request):
     noticias = noticias = Noticia.objects.all()
