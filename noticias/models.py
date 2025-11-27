@@ -59,7 +59,7 @@ class Noticia(models.Model):
 
 
 
-    # Django ORM
+# Django ORM
 
 # Python e Flask: SQLAlchemy
 # Python e Django: Django ORM

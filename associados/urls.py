@@ -1,8 +1,9 @@
 from django.urls import path
-from noticias.views import index
-from django.urls import path
-from associados.views import index
+from associados.views import associados, login, cadastro
 
 urlpatterns = [
-    path('index',index,name='index'),
+    path('associados',associados,name='associados'),
+    path('login',login,name='login'),
+    path('cadastro',cadastro,name='cadastro'),
+
 ]
