@@ -24,27 +24,43 @@ class Autor(models.Model):
     def __str__(self):
         return self.nome + self.perfil
 
+
 class Noticia(models.Model):
     titulo = models.CharField(max_length=90, null=False, blank=False)
     conteudo = models.TextField(null=False, blank=False)
-    data_atual = datetime.datetime.now()
     data_publicacao = models.DateTimeField(null=False, blank=False)
-    destaque = models.CharField(max_length=5 , choices=[
-        ('0','0'),
-        ('1','1'),
-        ('2','2'),
-        ('3','3'),
-        ('4','4'),
-        ('5','5') # <--- MUST BE ADDED TO CHOICES
-    ],default='5') # <--- DEFAULT VALUE SET HERE
+    destaque = models.CharField(
+        max_length=2,
+        choices=[
+            ('0', '0'),
+            ('1', '1'),
+            ('2', '2'),
+            ('3', '3'),
+            ('4', '4'),
+            ('5', '5')  # <--- MUST BE ADDED TO CHOICES
+        ],
+        default='5',  # <--- DEFAULT VALUE SET HERE
+        null=False,
+        blank=False
+    )
+
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d", null=False, blank=False)
-    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='noticias_autor', null=False)  # nome do relacionamento reverso (autor.noticias.all())
-    #Relacionamento N-1(Muitas Noticias para um Autor)
+
+    # Relacionamento N-1(Muitas Noticias para um Autor)
+
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='noticias_autor', null=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='noticias_categoria', null=False)
+
     def __str__(self):
         return self.titulo
 
-# Django ORM
+    def is_a_highlight(self):
+        # A helper method to check if the rank is within the highlight range (0-5)
+        return 0 <= self.priority_rank <= 5
+
+
+
+    # Django ORM
 
 # Python e Flask: SQLAlchemy
 # Python e Django: Django ORM
