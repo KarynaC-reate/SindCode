@@ -27,12 +27,36 @@ class AssociadoForm(forms.Form):
     genero_outro = forms.CharField(
         label='Selecione "Outro" acima e especifique',
         max_length=100,
-        required=True,
+        required=False,
         help_text='Use apenas se a opção "Outro" tiver sido selecionada.'
     )
+    data_nascimento = forms.DateField(
+        label='Data de nascimento',
+        required=True,
+    )
+    email = forms.CharField(
+        label="Email",
+        required=True,
+        max_length=100,
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu email'}),
+    )
+    senha1 = forms.CharField(
+        label="Senha",
+        required=True,
+        max_length=70,
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'}),
+    )
+
+class LoginForm(forms.Form):
+    nome_login = forms.CharField(
+        label="Nome login",
+        required=True,
+        max_length=100,
+    )
+
     senha = forms.CharField(
         label="Senha",
         required=True,
         max_length=70,
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        widget= forms.PasswordInput(),
     )

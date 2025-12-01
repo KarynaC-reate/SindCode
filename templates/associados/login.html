@@ -1,12 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pagina de Login</title>
-</head>
+{% extends 'noticias/base.html' %}
+{% load static %}
 
-<body>
-    Pagina de Login
-</body>
+{% block content %}
+<div class="d-flex flex-column min-vh-100 bg-dark text-light">
+    <main class="flex-grow-1 container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
 
-</html>
+                <!-- Cartão de Login com Tema Escuro -->
+                <div class="card p-5 shadow-lg bg-dark border-info border-2">
+                    <h2 class="fs-3 fw-bold text-info border-bottom border-info border-2 pb-2 mb-4 text-center">
+                        Acesso de Usuário
+                    </h2>
+
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+
+                        <!-- Assumindo que o contexto do Django envia um objeto 'form' -->
+                        {% for field in form.visible_fields %}
+                            <div class="mb-3">
+                                <!-- Rótulo do campo -->
+                                <!--suppress XmlInvalidId -->
+                                <label for="{{ field.id_for_label }}" class="form-label text-light">{{ field.label }}</label>
+
+                                <!-- Campo do formulário. Recomenda-se usar django-widget-tweaks para adicionar a classe 'form-control' e as classes de tema escuro. -->
+                                {{ field }}
+
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger mt-1">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+
+                        <!-- Mensagens de erro não relacionadas a campos específicos (non_field_errors) -->
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger mb-3">
+                                {% for error in form.non_field_errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <button type="submit" class="btn btn-info btn-lg w-100 text-white fw-bold rounded-3 shadow-sm mt-4">
+                            Entrar
+                        </button>
+
+                        <!-- Link para recuperar senha ou cadastro -->
+                        <div class="text-center mt-3 small">
+                            <a href="{% url 'cadastro' %}" class="text-info text-decoration-none hover-info">
+                                Não tem conta? Cadastre-se
+                            </a>
+                            <br>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

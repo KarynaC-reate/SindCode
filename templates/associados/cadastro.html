@@ -1,19 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'noticias/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Cadastro</title>
-</head>
+{% block content %}
+<div class="d-flex flex-column min-vh-100 bg-light text-dark">
+    <main class="flex-grow-1 container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-14 col-lg-12">
 
-<body>
-    <form action="{% url 'cadastro' %}" method="POST">
-        {% csrf_token %}
-        {% for field in form.visible_fields %}
-            {{ field }}
-        {% endfor %}
-        <button type="submit">cadastrar</button>
-    </form>
-</body>
+                <!-- Cartão de Cadastro com Tema Claro -->
+                <div class="card p-5 shadow-lg bg-white border-info border-2">
+                    <h2 class="fs-3 fw-bold text-primary border-bottom border-info border-2 pb-2 mb-4 text-center">
+                        Página de Cadastro
+                    </h2>
 
-</html>
+                    <form action="{% url 'cadastro' %}" method="POST">
+                        {% csrf_token %}
+
+                        {% for field in form.visible_fields %}
+                            <div class="mb-2">
+                                <!-- Rótulo do campo -->
+                                <!--suppress XmlInvalidId -->
+                                <label for="{{ field.id_for_label }}" class="form-label text-dark">{{ field.label }}</label>
+
+                                {{ field }}
+
+                                {% if field.help_text %}
+                                    <div class="form-text text-muted">{{ field.help_text }}</div>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger mt-1">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <div class="d-flex justify-content-center w-100">
+                            <button type="submit" class="btn btn-info btn-lg w-50 text-white fw-bold rounded-3 shadow-sm mt-4">
+                                Cadastrar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
