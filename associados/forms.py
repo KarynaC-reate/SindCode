@@ -40,16 +40,22 @@ class AssociadoForm(forms.Form):
         max_length=100,
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu email'}),
     )
-    senha1 = forms.CharField(
+    senha_1 = forms.CharField(
         label="Senha",
         required=True,
         max_length=70,
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'}),
     )
+    senha_2 = forms.CharField(
+        label="Senha",
+        required=True,
+        max_length=70,
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirme sua senha'}),
+    )
 
 class LoginForm(forms.Form):
     nome_login = forms.CharField(
-        label="Nome login",
+        label="Nome",
         required=True,
         max_length=100,
     )

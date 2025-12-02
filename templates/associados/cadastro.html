@@ -2,47 +2,69 @@
 {% load static %}
 
 {% block content %}
-<div class="d-flex flex-column min-vh-100 bg-light text-dark">
-    <main class="flex-grow-1 container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-14 col-lg-12">
 
-                <!-- Cartão de Cadastro com Tema Claro -->
-                <div class="card p-5 shadow-lg bg-white border-info border-2">
-                    <h2 class="fs-3 fw-bold text-primary border-bottom border-info border-2 pb-2 mb-4 text-center">
-                        Página de Cadastro
-                    </h2>
+<div class="container my-5">
+    <div class="card shadow-sm p-4">
+        <form action="{% url 'cadastro' %}" method="POST">
+            {% csrf_token %}
 
-                    <form action="{% url 'cadastro' %}" method="POST">
-                        {% csrf_token %}
+            <div class="row">
+                {% for field in form.visible_fields %}
 
-                        {% for field in form.visible_fields %}
-                            <div class="mb-2">
-                                <!-- Rótulo do campo -->
-                                <!--suppress XmlInvalidId -->
-                                <label for="{{ field.id_for_label }}" class="form-label text-dark">{{ field.label }}</label>
+                    <div class="col-12 col-lg-12" style="margin-bottom: 10px;"
+                         {% if field.name == 'genero_outro' %}id="div-genero-outro"{% endif %}>
 
-                                {{ field }}
+                        <!--suppress XmlInvalidId -->
+                        <label for="{{ field.id_for_label }}" style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
 
-                                {% if field.help_text %}
-                                    <div class="form-text text-muted">{{ field.help_text }}</div>
-                                {% endif %}
-                                {% for error in field.errors %}
-                                    <div class="alert alert-danger mt-1">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
-                        <div class="d-flex justify-content-center w-100">
-                            <button type="submit" class="btn btn-info btn-lg w-50 text-white fw-bold rounded-3 shadow-sm mt-4">
-                                Cadastrar
-                            </button>
-                        </div>
+                        {{ field }}
 
-                    </form>
-                </div>
-
+                       </div>
+                {% endfor %}
             </div>
-        </div>
-    </main>
+            <button class="btn btn-success col-12" style="padding: top 5px;">Cadastrar</button>
+        </form>
+    </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ID do campo de seleção de gênero (identidade_genero)
+        const generoSelect = document.getElementById('id_identidade_genero');
+
+        // ID do DIV que envolve o campo 'Outro' (genero_outro)
+        const generoOutroDiv = document.getElementById('div-genero-outro');
+
+        // Se um dos elementos não for encontrado, o script pode parar.
+        if (!generoSelect || !generoOutroDiv) {
+            console.error("ERRO: Elementos do formulário não encontrados. Verifique os IDs no HTML.");
+            return; // Sai da função
+        }
+
+        const VALOR_OUTRO = 'O';
+
+        function toggleOutroField() {
+            // Se o valor selecionado for 'O' (Outro), mostra; caso contrário, esconde.
+            generoOutroDiv.style.display = (generoSelect.value === VALOR_OUTRO) ? 'block' : 'none';
+
+            // Opcional: Limpa o valor do campo 'genero_outro' quando ele é escondido
+            if (generoSelect.value !== VALOR_OUTRO) {
+                 // Assumindo que o campo 'genero_outro' é um input dentro do div.
+                 // Você pode precisar de uma forma mais direta de acessar o input.
+                 // Aqui, tentamos uma abordagem segura, mas pode precisar de ajuste.
+                 const inputOutro = generoOutroDiv.querySelector('input');
+                 if (inputOutro) {
+                    inputOutro.value = '';
+                 }
+            }
+        }
+
+        // Executa na carga da página
+        toggleOutroField();
+
+        // Adiciona um evento para monitorar a mudança no dropdown
+        generoSelect.addEventListener('change', toggleOutroField);
+    });
+</script>
+
 {% endblock %}
