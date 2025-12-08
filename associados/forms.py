@@ -53,7 +53,7 @@ class AssociadoForm(forms.Form):
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirme sua senha'}),
     )
 
-class LoginForm(forms.Form):
+class LoginForms(forms.Form):
     nome_login = forms.CharField(
         label="Nome",
         required=True,
@@ -66,3 +66,5 @@ class LoginForm(forms.Form):
         max_length=70,
         widget= forms.PasswordInput(),
     )
+
+

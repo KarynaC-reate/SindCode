@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def beneficios(request):
+    return render(request, 'beneficios/beneficios.html')
