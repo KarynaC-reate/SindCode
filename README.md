@@ -157,3 +157,51 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
     depois pode apagar a branch (git branch -d (nome-da-branch))
 */
  
+
+#### ** Aula 2 - Formulários Django
+- Criando formulário
+- Estilizando formulário
+- Quebra de segurança CSRF
+- Classe Forms do Django
+- Exercícios
+- Criando formulário (ok)
+- Estilizando formulário (ok)
+- Quebra de segurança CSRF (ok)
+- Classe Forms do Django (ok)
+- Exercícios (ok)
+
+#### ** Aula 3 - Autenticação de Associados
+- Associados no Django
+- Lógica de Cadastro
+- Lógica de Login
+- Alertas e Mensagens
+- Logout
+- Associados no Django (ok)
+- Lógica de Cadastro (ok)
+- Lógica de Login (ok)
+- Alertas e Mensagens (produção)
+- Logout (produção)
+
+#### ** Aula 4 - Validações
+- Refatoração e Validação
+- Associando tabelas
+- Validação clean
+- Mensagem de erro
+
+#### ** Aula 5 - Refatoração
+
+- Partial para alertas
+- Reorganizando diretórios
+- Concluindo o App Associados
+
+#### ** Aula 6 - Autenticação com OAuth 2.0
+- Servidor
+- O Auth 2.0
+- Admin, GitHub e OAuth
+- Apenas para pessoas autenticadas
+- OAuth com GitHub
+
+#### ** Aula 7 - Cloud
+
+- IaaS
+- PaaS
