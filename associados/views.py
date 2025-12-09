@@ -7,6 +7,20 @@ from django.contrib import auth, messages
 def associados(request):
     return render(request, 'associados/index.html')
 
+def logout(request):
+    # não esquecer do request(requisição)
+    # redirecionamento - redirect
+    # logout com sucesso
+    # redirecionar para página de login.
+    # Se a requisição for POST (tentativa de login)
+    # Verificar envio da requisição
+
+    auth.logout(request)
+    messages.success(request, 'Logout efetuado com sucesso')
+    return redirect('login')
+
+
+
 def login(request):
     form = LoginForms(request.POST)
 
@@ -24,7 +38,7 @@ def login(request):
         if usuario is not None:
             # Se o usuário for autenticado com sucesso
             auth.login(request, usuario)
-            messages.success(request, usuario)
+            messages.success(request, f'{nome} logado com sucesso')
             return redirect('beneficios')
         else:
             messages.error(request, 'Usuário inexistente.')

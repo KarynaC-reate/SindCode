@@ -7,17 +7,18 @@
     <h2 class="text-primary mb-4">Página de Login</h2>
 
     <div class="card shadow-sm p-4">
-        <form action="{% url 'login' %}"  method="POST">
+        <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
 
             <div class="row mb-3">
-              {% for field in form.visible_fields %}
-                        <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
-                            <!--suppress XmlInvalidId -->
-                            <label for="{{ field.id_for_label }}" style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
-                            {{ field }}
-                        </div>
-              {% endfor %}
+                {% for field in form.visible_fields %}
+                <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
+                    <!--suppress XmlInvalidId -->
+                    <label for="{{ field.id_for_label }}"
+                           style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
+                    {{ field }}
+                </div>
+                {% endfor %}
 
             </div>
 
@@ -25,6 +26,12 @@
                 Entrar
             </button>
         </form>
+
+        {% for message in messages %}
+            <div>
+                <p id="messages">{{message}}</p>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
