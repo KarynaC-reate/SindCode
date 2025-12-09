@@ -179,8 +179,8 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - Associados no Django (ok)
 - Lógica de Cadastro (ok)
 - Lógica de Login (ok)
-- Alertas e Mensagens (produção)
-- Logout (produção)
+- Alertas e Mensagens (produção) (ok)
+- Logout (produção) (ok)
 
 #### ** Aula 4 - Validações
 - Refatoração e Validação
