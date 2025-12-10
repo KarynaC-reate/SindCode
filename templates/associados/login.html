@@ -16,15 +16,20 @@
                     <!--suppress XmlInvalidId -->
                     <label for="{{ field.id_for_label }}"
                            style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
+
                     {{ field }}
                 </div>
+
                 {% endfor %}
 
             </div>
 
-            <button type="submit" class="btn btn-primary fw-bold mt-2">
+
+            <button type="submit" class="btn btn-primary fw-bold mt-2" style="width: 140px; height: 40px;">
                 Entrar
             </button>
+
+
         </form>
 
         {% for message in messages %}

@@ -19,8 +19,6 @@ def logout(request):
     messages.success(request, 'Logout efetuado com sucesso')
     return redirect('login')
 
-
-
 def login(request):
     form = LoginForms(request.POST)
 
@@ -38,10 +36,10 @@ def login(request):
         if usuario is not None:
             # Se o usuário for autenticado com sucesso
             auth.login(request, usuario)
-            messages.success(request, f'{nome} logado com sucesso')
+            messages.success(request, f'{nome} Bem-vindo(a)! login efetuado com sucesso.')
             return redirect('beneficios')
         else:
-            messages.error(request, 'Usuário inexistente.')
+            messages.error(request, 'Usuário ou senha inválidos.')
             return redirect('login')
 
         # Se o login falhar (usuario é None), o fluxo continua para a linha
@@ -73,7 +71,7 @@ def cadastro(request):
                 password=senha
             )
             associado.save()
-            messages.success(request, 'Cadastro efetuado com sucesso')
+            messages.success(request, 'Cadastro efetuado com sucesso!')
             return redirect('login')
 
     return render(request, 'associados/cadastro.html',{'form': form})

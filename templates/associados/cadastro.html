@@ -10,22 +10,34 @@
 
             <div class="row">
                 {% for field in form.visible_fields %}
-
                     <div class="col-12 col-lg-12" style="margin-bottom: 10px;"
                          {% if field.name == 'genero_outro' %}
                                  id="div-genero-outro"
                          {% endif %}>
 
-                        <!--suppress XmlInvalidId -->
-                        <label for="{{ field.id_for_label }}" style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
+                         <!--suppress XmlInvalidId -->
+                         <label for="{{ field.id_for_label }}" style="color:#000000; margin-bottom: 5px;">{{field.label}}</label>
 
-                        {{ field }}
+                         {{ field }}
 
-                       </div>
+                         </div>
+                         {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                {{error}}
+                            </div>
+                         {% endfor %}
+
                 {% endfor %}
             </div>
-            <button class="btn btn-success col-12" style="padding: top 5px;">Cadastrar</button>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary fw-bold mt-4" style="width: 140px; height: 40px;">
+                    Cadastrar
+                </button>
+            </div>
+
         </form>
+
     </div>
 </div>
 
