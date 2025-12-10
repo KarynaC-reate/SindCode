@@ -183,10 +183,10 @@ A UC visa aplicar metodologias ágeis e tecnologias modernas para a criação de
 - Logout (produção) (ok)
 
 #### ** Aula 4 - Validações
-- Refatoração e Validação
-- Associando tabelas
+- Refatoração e Validação (ok)
+- Associando tabelas (ok)
 - Validação clean
-- Mensagem de erro
+- Mensagem de erro (ok)
 
 #### ** Aula 5 - Refatoração
 
