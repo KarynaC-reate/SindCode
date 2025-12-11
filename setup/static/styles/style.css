@@ -133,6 +133,19 @@ body{
     color: #007bff; /* Exemplo: Mudar a cor ao passar o mouse */
 }
 
-.buscar_icone{
-    margin-right:10px
+.icone-transparente-btn {
+    /* CHAVE 1: Remove a cor de fundo */
+    background-color: transparent;
+    /* CHAVE 2: Remove a borda padrão do botão */
+    border: none;
+    /* CHAVE 3: Remove qualquer sombra ou brilho que o botão possa ter */
+    box-shadow: none;
+    /* Garante que o ícone de clique apareça */
+    cursor: pointer;
+    /* Remove padding interno para que o botão tenha exatamente o tamanho da imagem */
+    padding: 0;
+    /* Opcional: Alinha a imagem corretamente se for flex ou block */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

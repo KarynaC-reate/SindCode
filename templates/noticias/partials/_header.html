@@ -36,6 +36,12 @@
                     </div>
                 </form>
 
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %} <button type="submit" class="icone-transparente-btn">
+                        <img src="{% static 'assets/icones/logout(1).png' %}" alt="Sair" style="width: 24px; height: 24px; display: block;">
+                    </button>
+                </form>
+
             </div>
         </nav>
     </div>

@@ -50,8 +50,15 @@ class AssociadoForm(forms.Form):
         label="Senha",
         required=True,
         max_length=70,
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirme sua senha'}),
+        widget=forms.PasswordInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'Confirme sua senha',
+            }
+        ),
+        error_messages={'required': 'Confirme sua senha'}
     )
+
     # fim da classe AssociadoForm()
 
     def clean_nome_cadastro(self):
@@ -84,3 +91,4 @@ class LoginForms(forms.Form):
         max_length=70,
         widget= forms.PasswordInput(),
     )
+

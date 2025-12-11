@@ -8,16 +8,17 @@ def associados(request):
     return render(request, 'associados/index.html')
 
 def logout(request):
-    # não esquecer do request(requisição)
-    # redirecionamento - redirect
-    # logout com sucesso
-    # redirecionar para página de login.
-    # Se a requisição for POST (tentativa de login)
-    # Verificar envio da requisição
+    if request.user.is_authenticated:
+        auth.logout(request)
+        messages.success(request, 'Logout efetuado com sucesso')
+        return redirect('login')
+    else:
+        messages.info(request, 'Não foi possível fazer logout. Nenhum usuário está logado.')
+        return redirect('login')
 
-    auth.logout(request)
-    messages.success(request, 'Logout efetuado com sucesso')
-    return redirect('login')
+#    auth.logout(request)
+#    messages.success(request, 'Logout efetuado com sucesso')
+#    return redirect('login')
 
 def login(request):
     form = LoginForms(request.POST)
